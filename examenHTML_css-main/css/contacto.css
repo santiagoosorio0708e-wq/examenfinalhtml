@@ -1,0 +1,215 @@
+/* Estilos específicos para la página de Contacto */
+
+.contact-main {
+    padding: 0 var(--spacing-lg) 120px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    position: relative;
+}
+
+.form-wrapper {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    transition: opacity var(--transition-normal);
+}
+
+.form-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-text-secondary);
+}
+
+/* === EL TRUCO CSS: Validación sin JS === */
+
+/* Estilos iniciales para íconos y mensajes */
+.form-group .error-msg {
+    display: none;
+    font-size: 12px;
+    color: var(--color-error);
+    margin-top: 4px;
+}
+
+.form-group .success-icon {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 36px;
+    color: var(--color-success);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-group input:not(:placeholder-shown):valid,
+.form-group textarea:not(:placeholder-shown):valid,
+.form-group select:valid {
+    border-color: var(--color-success);
+    box-shadow: 0 0 0 1px rgba(52, 199, 89, 0.2);
+}
+
+.form-group input:not(:placeholder-shown):valid ~ .success-icon,
+.form-group textarea:not(:placeholder-shown):valid ~ .success-icon {
+    display: block;
+}
+
+.form-group input:not(:placeholder-shown):invalid,
+.form-group textarea:not(:placeholder-shown):invalid {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 1px rgba(255, 59, 48, 0.2);
+}
+
+/* Mostrar mensaje de error al perder el foco en campos inválidos */
+.form-group input:not(:placeholder-shown):invalid ~ .error-msg,
+.form-group textarea:not(:placeholder-shown):invalid ~ .error-msg {
+    display: block;
+}
+
+
+/* Botón Submit */
+.submit-btn {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+    margin-top: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* Deshabilitar botón visualmente si el form es inválido */
+.contact-form:invalid .submit-btn {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.submit-btn:hover {
+    background-color: var(--color-text-secondary);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* === MENSAJE DE ÉXITO === */
+
+.submit-toggle {
+    display: none;
+}
+
+.success-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.success-icon-large {
+    color: var(--color-success);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+}
+
+.success-message h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.success-message p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.back-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.back-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
+
+/* Lógica del checkbox hack */
+.submit-toggle:checked ~ .form-wrapper {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.submit-toggle:checked ~ .success-message {
+    display: block;
+    transform: translate(-50%, 0);
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

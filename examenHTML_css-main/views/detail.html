@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto</title>
+
+
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="navbar-toggle">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Testimonial</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <h1 class="logo">Home</h1>
+        </div>
+    </nav>
+    <div class="app-container" style="padding-top: 64px;">
+        <!-- Image & Actions Section -->
+        <section class="product-hero">
+            <img id="hero-image" src="../storage/img/vestidoamarillo.png" alt="Vestido de Verano Floral"
+                class="hero-image">
+
+            <nav class="top-actions">
+                <a href="../index.html" class="action-btn back-btn" aria-label="Volver atrás">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </a>
+                <button class="action-btn favorite-btn active" aria-label="Añadir a favoritos">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>
+                </button>
+            </nav>
+        </section>
+
+        <!-- Product Details -->
+        <main class="product-details">
+            <div class="title-row">
+                <h1 id="product-title" class="product-title">Vestido de Verano Floral</h1>
+                <div class="quantity-selector">
+                    <button class="qty-btn" aria-label="Disminuir">-</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn" aria-label="Aumentar">+</button>
+                </div>
+            </div>
+
+            <div class="rating-views">
+                <div class="rating">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="star-icon">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+                    <span id="rating-score" class="rating-score">4.8</span>
+                    <span id="rating-count" class="rating-count">(120 reseñas)</span>
+                </div>
+                <div class="views">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <span id="views">342 vistas</span>
+                </div>
+            </div>
+
+            <div class="description-section">
+                <input type="checkbox" id="show-more" class="show-more-toggle">
+                <div class="description-content">
+                    <p id="description">Vestido de verano floral con caída ligera y diseño fresco. Ideal para salidas
+                        casuales, clima cálido y looks femeninos con comodidad durante todo el día.</p>
+                    <div class="extra-details">
+                        <ul id="details-list">
+                            <li>Material: 100% Rayón</li>
+                            <li>Cuidado: Lavado a máquina en frío</li>
+                            <li>Ajuste: Regular, cintura elástica</li>
+                            <li>Largo: Midi</li>
+                        </ul>
+                    </div>
+                </div>
+                <label for="show-more" class="show-more-btn">
+                    <span class="text-more">Ver más detalles</span>
+                    <span class="text-less">Ver menos</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="chevron-icon">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </label>
+            </div>
+
+            <section class="selection-section">
+                <div class="section-header">
+                    <h2>Talla</h2>
+                    <a href="#" class="size-guide">Guía de tallas</a>
+                </div>
+                <div class="options-row size-options">
+                    <label class="option-label">
+                        <input type="radio" name="size" value="s">
+                        <span class="option-chip">S</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="size" value="m" checked>
+                        <span class="option-chip">M</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="size" value="l">
+                        <span class="option-chip">L</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="size" value="xl">
+                        <span class="option-chip">XL</span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="selection-section">
+                <div class="section-header">
+                    <h2>Color</h2>
+                </div>
+                <div id="color-options" class="options-row color-options"></div>
+            </section>
+        </main>
+
+        <div class="bottom-action-bar">
+            <div class="nav-container">
+                <div class="price-container">
+                    <span class="price-label">Precio Total</span>
+                    <span id="total-price" class="total-price">$45.00</span>
+                </div>
+                <a href="checkout.html" class="primary-btn checkout-btn">
+                    Comprar ahora
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const PRODUCT_DATA = {
+            vestido: {
+                image: "../storage/img/vestidoamarillo.png",
+                alt: "Vestido de Verano Floral",
+                title: "Vestido de Verano Floral",
+                rating: "4.8",
+                reviews: "(120 reseñas)",
+                views: "342 vistas",
+                description: "Vestido de verano floral con caída ligera y diseño fresco. Ideal para salidas casuales, clima cálido y looks femeninos con comodidad durante todo el día.",
+                details: [
+                    "Material: 100% Rayón",
+                    "Cuidado: Lavado a máquina en frío",
+                    "Ajuste: Regular, cintura elástica",
+                    "Largo: Midi"
+                ],
+                price: "$45.00",
+                colors: [
+                    "background-image: url('https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=50&auto=format&fit=crop');",
+                    "background-color: #A93B49;",
+                    "background-color: #3B5998;"
+                ]
+            },
+            bolso: {
+                image: "../storage/img/bolsorojo.png",
+                alt: "Bolso Rojo",
+                title: "Bolso Rojo",
+                rating: "4.5",
+                reviews: "(89 reseñas)",
+                views: "150 vistas",
+                description: "Bolso rojo de diseño moderno y práctico, perfecto para el uso diario. Su tamaño compacto permite llevar lo esencial con estilo en cualquier ocasión.",
+                details: [
+                    "Material: Cuero sintético premium",
+                    "Cuidado: Limpiar con paño húmedo",
+                    "Correa: Ajustable para hombro o cruzado",
+                    "Cierre: Cremallera superior segura"
+                ],
+                price: "$152.00",
+                colors: [
+                    "background-color: #FFFFFF; border: 1px solid #ddd;",
+                    "background-color: #111111;",
+                    "background-color: #9E9E9E;"
+                ]
+            },
+            chaqueta_negra: {
+                image: "../storage/img/chaquetanegra.png",
+                alt: "Camisa negra clasica",
+                title: "Chaqueta negra",
+                rating: "4.9",
+                reviews: "(215 reseñas)",
+                views: "849 vistas",
+                description: "Esta chaqueta negra esta diseñada para mantener el estilo y mantener la comodidad sin dejar de lado su funcion principal que es abrigar, es totalmente comoda y unica.",
+                details: [
+                    "Material: Algodón suave",
+                    "Cuidado: Lavado a máquina en ciclo suave",
+                    "Ajuste: Boxy fit",
+                    "Diseño: Manga larga"
+                ],
+                price: "$55.00",
+                colors: [
+                    "background-color: #4B6F8E;",
+                    "background-color: #2F2F2F;",
+                    "background-color: #8CABC1;"
+                ]
+            },
+            cuero_vintage: {
+                image: "../storage/img/chaquetadecuerovintaje.png",
+                alt: "Chaqueta de Cuero Vintage",
+                title: "Chaqueta de Cuero Vintage",
+                rating: "4.7",
+                reviews: "(53 reseñas)",
+                views: "112 vistas",
+                description: "Chaqueta de cuero vintage con acabado texturizado y estilo atemporal. Aporta personalidad a cualquier look y protege del clima fresco con gran comodidad.",
+                details: [
+                    "Material: 100% Cuero Genuino. Forro de Poliéster",
+                    "Cuidado: Limpieza en seco especializada",
+                    "Ajuste: Ceñido con cierres asimétricos",
+                    "Largo: A la cintura"
+                ],
+                price: "$89.00",
+                colors: [
+                    "background-color: #111111;",
+                    "background-color: #5D4037;",
+                    "background-color: #8B0000;"
+                ]
+            }
+        };
+
+        function setProductData(product) {
+            const data = PRODUCT_DATA[product] || PRODUCT_DATA.vestido;
+            const heroImage = document.getElementById("hero-image");
+            heroImage.src = data.image;
+            heroImage.alt = data.alt;
+
+            document.getElementById("product-title").textContent = data.title;
+            document.getElementById("rating-score").textContent = data.rating;
+            document.getElementById("rating-count").textContent = data.reviews;
+            document.getElementById("views").textContent = data.views;
+            document.getElementById("description").textContent = data.description;
+            document.getElementById("total-price").textContent = data.price;
+
+            const detailsList = document.getElementById("details-list");
+            detailsList.innerHTML = data.details.map((item) => `<li>${item}</li>`).join("");
+
+            const colorOptions = document.getElementById("color-options");
+            colorOptions.innerHTML = data.colors
+                .map((style, index) => `
+                    <label class="color-label">
+                        <input type="radio" name="color" value="color-${index}" ${index === 0 ? "checked" : ""}>
+                        <span class="color-swatch" style="${style}"></span>
+                    </label>
+                `)
+                .join("");
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        setProductData(params.get("product"));
+    </script>
+</body>
+
+</html>
